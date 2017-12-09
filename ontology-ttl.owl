@@ -1,0 +1,190 @@
+@prefix : <http://www.madridonyou/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.madridonyou/ontology#> .
+
+<http://www.madridonyou/ontology#> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.madridonyou/ontology#hasLocation
+:hasLocation rdf:type owl:ObjectProperty ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( <http://dbpedia.org/ontology/Library>
+                                         <http://dbpedia.org/ontology/Monument>
+                                         <http://dbpedia.org/ontology/Museum>
+                                         <http://dbpedia.org/ontology/ReligiousBuilding>
+                                         <http://dbpedia.org/ontology/foundation>
+                                         <http://dbpedia.org/ontology/office>
+                                         <http://es.dbpedia.org/page/Mercadillo>
+                                       )
+                         ] ;
+             rdfs:range <http://dbpedia.org/ontology/location> .
+
+
+###  http://www.madridonyou/ontology#isInDistrict
+:isInDistrict rdf:type owl:ObjectProperty ;
+              rdfs:domain <http://dbpedia.org/ontology/location> ;
+              rdfs:range <http://dbpedia.org/ontology/district> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://dbpedia.org/property/address
+<http://dbpedia.org/property/address> rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain [ rdf:type owl:Class ;
+                                                    owl:unionOf ( <http://dbpedia.org/ontology/Library>
+                                                                  <http://dbpedia.org/ontology/Monument>
+                                                                  <http://dbpedia.org/ontology/Museum>
+                                                                  <http://dbpedia.org/ontology/ReligiousBuilding>
+                                                                  <http://dbpedia.org/ontology/foundation>
+                                                                  <http://dbpedia.org/ontology/office>
+                                                                )
+                                                  ] ;
+                                      rdfs:range xsd:string .
+
+
+###  http://dbpedia.org/property/latitude
+<http://dbpedia.org/property/latitude> rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain [ rdf:type owl:Class ;
+                                                     owl:unionOf ( <http://dbpedia.org/ontology/Library>
+                                                                   <http://dbpedia.org/ontology/Monument>
+                                                                   <http://dbpedia.org/ontology/Museum>
+                                                                   <http://dbpedia.org/ontology/ReligiousBuilding>
+                                                                   <http://dbpedia.org/ontology/foundation>
+                                                                   <http://dbpedia.org/ontology/office>
+                                                                 )
+                                                   ] ;
+                                       rdfs:range xsd:float .
+
+
+###  http://dbpedia.org/property/location
+<http://dbpedia.org/property/location> rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain [ rdf:type owl:Class ;
+                                                     owl:unionOf ( <http://dbpedia.org/ontology/Library>
+                                                                   <http://dbpedia.org/ontology/Monument>
+                                                                   <http://dbpedia.org/ontology/Museum>
+                                                                   <http://dbpedia.org/ontology/ReligiousBuilding>
+                                                                   <http://dbpedia.org/ontology/foundation>
+                                                                   <http://dbpedia.org/ontology/office>
+                                                                 )
+                                                   ] ;
+                                       rdfs:range xsd:anyURI .
+
+
+###  http://dbpedia.org/property/longitude
+<http://dbpedia.org/property/longitude> rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain [ rdf:type owl:Class ;
+                                                      owl:unionOf ( <http://dbpedia.org/ontology/Library>
+                                                                    <http://dbpedia.org/ontology/Monument>
+                                                                    <http://dbpedia.org/ontology/Museum>
+                                                                    <http://dbpedia.org/ontology/ReligiousBuilding>
+                                                                    <http://dbpedia.org/ontology/foundation>
+                                                                    <http://dbpedia.org/ontology/office>
+                                                                  )
+                                                    ] ;
+                                        rdfs:range xsd:float .
+
+
+###  http://dbpedia.org/property/name
+<http://dbpedia.org/property/name> rdf:type owl:DatatypeProperty ;
+                                   rdfs:domain [ rdf:type owl:Class ;
+                                                 owl:unionOf ( <http://dbpedia.org/ontology/Library>
+                                                               <http://dbpedia.org/ontology/Monument>
+                                                               <http://dbpedia.org/ontology/Museum>
+                                                               <http://dbpedia.org/ontology/ReligiousBuilding>
+                                                               <http://dbpedia.org/ontology/foundation>
+                                                               <http://dbpedia.org/ontology/office>
+                                                             )
+                                               ] ;
+                                   rdfs:range xsd:string .
+
+
+###  http://dbpedia.org/property/phoneNumber
+<http://dbpedia.org/property/phoneNumber> rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain [ rdf:type owl:Class ;
+                                                        owl:unionOf ( <http://dbpedia.org/ontology/Library>
+                                                                      <http://dbpedia.org/ontology/Monument>
+                                                                      <http://dbpedia.org/ontology/Museum>
+                                                                      <http://dbpedia.org/ontology/ReligiousBuilding>
+                                                                      <http://dbpedia.org/ontology/foundation>
+                                                                      <http://dbpedia.org/ontology/office>
+                                                                    )
+                                                      ] ;
+                                          rdfs:range xsd:string .
+
+
+###  http://dbpedia.org/property/url
+<http://dbpedia.org/property/url> rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain [ rdf:type owl:Class ;
+                                                owl:unionOf ( <http://dbpedia.org/ontology/Library>
+                                                              <http://dbpedia.org/ontology/Monument>
+                                                              <http://dbpedia.org/ontology/Museum>
+                                                              <http://dbpedia.org/ontology/ReligiousBuilding>
+                                                              <http://dbpedia.org/ontology/foundation>
+                                                              <http://dbpedia.org/ontology/office>
+                                                            )
+                                              ] ;
+                                  rdfs:range xsd:anyURI .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:DatatypeProperty ;
+             rdfs:domain <http://dbpedia.org/ontology/Museum> ;
+             rdfs:range xsd:string .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:DatatypeProperty ;
+           rdfs:domain <http://dbpedia.org/ontology/district> ;
+           rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://dbpedia.org/ontology/Library
+<http://dbpedia.org/ontology/Library> rdf:type owl:Class .
+
+
+###  http://dbpedia.org/ontology/Monument
+<http://dbpedia.org/ontology/Monument> rdf:type owl:Class .
+
+
+###  http://dbpedia.org/ontology/Museum
+<http://dbpedia.org/ontology/Museum> rdf:type owl:Class .
+
+
+###  http://dbpedia.org/ontology/ReligiousBuilding
+<http://dbpedia.org/ontology/ReligiousBuilding> rdf:type owl:Class .
+
+
+###  http://dbpedia.org/ontology/district
+<http://dbpedia.org/ontology/district> rdf:type owl:Class .
+
+
+###  http://dbpedia.org/ontology/foundation
+<http://dbpedia.org/ontology/foundation> rdf:type owl:Class .
+
+
+###  http://dbpedia.org/ontology/location
+<http://dbpedia.org/ontology/location> rdf:type owl:Class .
+
+
+###  http://dbpedia.org/ontology/office
+<http://dbpedia.org/ontology/office> rdf:type owl:Class .
+
+
+###  http://es.dbpedia.org/page/Mercadillo
+<http://es.dbpedia.org/page/Mercadillo> rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
